@@ -1,9 +1,10 @@
 #include <iostream>
 #include "InsertionSort.h"
-#include <ctime>
+#include <chrono>
 
 int main() {
-	unsigned int start_time = clock();
+	
+	auto start = std::chrono::high_resolution_clock::now();
 
 	int arr1[] = { 1, 4, 6, 7, 523, 6342, 12, 524, 7674, 987 };
 	double arr2[] = { 12.4325, 132321.32, 2313.653, 65.7, 543.11 };
@@ -27,10 +28,10 @@ int main() {
 
 	std::cout << std::endl;
 
-	unsigned int end_time = clock();
-	unsigned int search_time = end_time - start_time;
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<float> duration = end - start;
 
-	std::cout << search_time;
-
+	std::cout << duration.count();
+	
 	return 0;
 }
