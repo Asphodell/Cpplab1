@@ -3,6 +3,8 @@
 
 int main() {
 
+	unsigned int start_time = clock();
+
 	int array1[] = {1, 2, 4, 5};
 
 	double array2[] = { 1.5, 12.5, 52.7, 12312.4, 434342.1, 2.4, 122.4 };
@@ -23,6 +25,13 @@ int main() {
 	for (int i = 0; i < size2; i++) {
 		std::cout << array2[i] << " ";
 	}
+
+	std::cout << std::endl;	
+
+	unsigned int end_time = clock();
+	unsigned int search_time = end_time - start_time;
+
+	std::cout << search_time;
 
 	return 0;
 }
