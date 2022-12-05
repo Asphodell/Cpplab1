@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Bubble.h"
-
+#include <chrono>
 int main() {
 
-	unsigned int start_time = clock();
+	auto start = std::chrono::high_resolution_clock::now();
 
 	int array1[] = {1, 2, 4, 5};
 
@@ -28,10 +28,10 @@ int main() {
 
 	std::cout << std::endl;	
 
-	unsigned int end_time = clock();
-	unsigned int search_time = end_time - start_time;
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<float> duration = end - start;
 
-	std::cout << search_time;
+	std::cout << duration.count();
 
 	return 0;
 }

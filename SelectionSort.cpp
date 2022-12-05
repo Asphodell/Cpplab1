@@ -1,10 +1,10 @@
 #include <iostream>
 #include "SelectionSort.h"
-#include <ctime>
+#include <chrono>
 
 int main() {
 
-	unsigned int start_time = clock();
+	auto start = std::chrono::high_resolution_clock::now();
 
 	int arr1[] = { 2, 3, 5, 6, 8, 23, 543, 85643, 12, 312, 5346, 876 };
 	double arr2[] = { 1.123214321, 423.3124, 312.432, 12.21, 43215.746, 432543543.3 };
@@ -25,10 +25,10 @@ int main() {
 	}
 	std::cout << std::endl;
 
-	unsigned int end_time = clock(); 
-	unsigned int search_time = end_time - start_time; 
-
-	//std::cout << search_time;
+	auto end = std::chrono::high_resolution_clock::now();
+	std::chrono::duration<float> duration = end - start;
+	
+	std::cout << duration.count();
 
 	return 0;
 }
